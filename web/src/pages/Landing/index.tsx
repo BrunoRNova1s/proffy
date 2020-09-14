@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 import "./style.css";
 
@@ -20,15 +21,15 @@ function Landing() {
         <img src={landingImg} alt="landing main" className="hero-image" />
 
         <div className="buttons-container">
-          <a href="" className="study">
+          <Link to="/study" className="study">
             <img src={studyIcon} alt="study" />
             Study
-          </a>
+          </Link>
 
-          <a href="" className="give-classes">
+          <Link to="/give-classes" className="give-classes">
             <img src={giveClassesIcon} alt="give classes" />
             Give Classes
-          </a>
+          </Link>
         </div>
 
         <span className="total-connections">
