@@ -13,18 +13,17 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
   return (
     <header className="page-header">
       <div className="top-bar-container">
-        <Link to='/'>
+        <Link to="/">
           <img src={backIcon} alt="back" />
         </Link>
         <img src={logoImg} alt="proffy" />
       </div>
       <div className="header-content">
         <strong>{props.title}</strong>
+        {props.children}
       </div>
-
-      {props.children}
     </header>
   );
-}
+};
 
 export default PageHeader;
