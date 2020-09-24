@@ -3,6 +3,7 @@
 # Connections
 
 - route to list the total connections made
+- route to create a new connection
 
 ## class
 
