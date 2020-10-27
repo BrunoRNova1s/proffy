@@ -1,0 +1,31 @@
+#page-teacher-list {
+    width: 100vw;
+    height: 100vh;
+}
+
+#page-teacher-list .page-header .header-content {
+    margin-bottom: 6.4rem;
+}
+
+#page-teacher-list main {
+    background: var(--color-box-base);
+    width: 100%;
+    max-width: 74rem;
+    border-radius: 0.8rem;
+    margin: -3.2rem auto 3.2rem;
+    padding-top: 6.4rem;
+    overflow: hidden;
+}
+
+#page-teacher-list main fieldset {
+    border: 0;
+    padding: 0 2.4rem;
+}
+
+#page-teacher-list main fieldset + fieldset {
+    margin-top: 6.4rem;
+}
+
+#page-teacher-list main fieldset legend {
+    font: 700 2.4rem Archivo;
+}
