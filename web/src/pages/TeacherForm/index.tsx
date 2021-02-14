@@ -7,7 +7,7 @@ import warningIcon from '../../assets/images/icons/warning.svg'
 
 function TeacherForm() {
   return (
-    <div id="page-teacher-list" className="container">
+    <div id="page-teacher-form" className="container">
       <PageHeader
         title="You want to teach, amazing!"
         description="the first step is to fill out the form"
@@ -31,7 +31,7 @@ function TeacherForm() {
           <p>
             <img src={warningIcon} alt="warning"/>
             Warning! <br />
-            data
+            Fill the data
           </p>
           <button type="button">
             Save
