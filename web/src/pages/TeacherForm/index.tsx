@@ -40,6 +40,30 @@ function TeacherForm() {
           <Input name="cost" label="Cost Class"></Input>
         </fieldset>
 
+        <fieldset>
+          <legend>
+            Schedule available
+            <button type="button">+ New Schedule</button>
+          </legend>
+          <div className="schedule-item">
+          <Select
+            name="week_day"
+            label="Week day"
+            options={[
+              { value: "0", label: "Sunday" },
+              { value: "1", label: "Monday" },
+              { value: "2", label: "Tuesday" },
+              { value: "3", label: "Wednesday" },
+              { value: "4", label: "Thursday" },
+              { value: "5", label: "Friday" },
+              { value: "6", label: "Saturday" },
+            ]}
+          ></Select>
+          <Input type="time" name="from" label="from"/>
+          <Input type="time" name="to" label="to" />
+          </div>
+        </fieldset>
+
         <footer>
           <p>
             <img src={warningIcon} alt="warning" />
