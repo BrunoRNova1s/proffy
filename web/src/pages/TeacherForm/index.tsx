@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PageHeader from "../../components/PageHeader";
 import "./styles.css";
 import Input from "../../components/Input";
@@ -8,6 +8,14 @@ import Textarea from "../../components/Textarea";
 import Select from "../../components/Select";
 
 function TeacherForm() {
+  const [scheduleItems, setScheduleItems] = useState([
+    { weed_day: 0, from: "", to: "" },
+  ]);
+
+  function addNewScheduleItem() {
+    setScheduleItems([...scheduleItems, { weed_day: 0, from: "", to: "" }]);
+  }
+
   return (
     <div id="page-teacher-form" className="container">
       <PageHeader
@@ -43,25 +51,31 @@ function TeacherForm() {
         <fieldset>
           <legend>
             Schedule available
-            <button type="button">+ New Schedule</button>
+            <button type="button" onClick={addNewScheduleItem}>
+              + New Schedule
+            </button>
           </legend>
-          <div className="schedule-item">
-          <Select
-            name="week_day"
-            label="Week day"
-            options={[
-              { value: "0", label: "Sunday" },
-              { value: "1", label: "Monday" },
-              { value: "2", label: "Tuesday" },
-              { value: "3", label: "Wednesday" },
-              { value: "4", label: "Thursday" },
-              { value: "5", label: "Friday" },
-              { value: "6", label: "Saturday" },
-            ]}
-          ></Select>
-          <Input type="time" name="from" label="from"/>
-          <Input type="time" name="to" label="to" />
-          </div>
+          {scheduleItems.map((scheduleItem) => {
+            return (
+              <div key={scheduleItem.weed_day} className="schedule-item">
+                <Select
+                  name="week_day"
+                  label="Week day"
+                  options={[
+                    { value: "0", label: "Sunday" },
+                    { value: "1", label: "Monday" },
+                    { value: "2", label: "Tuesday" },
+                    { value: "3", label: "Wednesday" },
+                    { value: "4", label: "Thursday" },
+                    { value: "5", label: "Friday" },
+                    { value: "6", label: "Saturday" },
+                  ]}
+                ></Select>
+                <Input type="time" name="from" label="from" />
+                <Input type="time" name="to" label="to" />
+              </div>
+            );
+          })}
         </fieldset>
 
         <footer>
