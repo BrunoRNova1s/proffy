@@ -8,6 +8,7 @@ import landingImg from "../../assets/images/landing.svg";
 import studyIcon from "../../assets/images/icons/study.svg";
 import giveClassesIcon from "../../assets/images/icons/give-classes.svg";
 import purpleHeartIcon from "../../assets/images/icons/purple-heart.svg";
+
 import api from "../../services/api";
 
 function Landing() {
@@ -15,7 +16,9 @@ function Landing() {
 
   useEffect(() => {
     api.get('/connections').then(response => {
-      console.log(response)
+      const { total } = response.data
+
+      setTotalConnections(total)
     })
   }, [])
 
@@ -42,7 +45,7 @@ function Landing() {
         </div>
 
         <span className="total-connections">
-          Total connections - 200
+          Total connections - {totalConnections}
           <img src={purpleHeartIcon} alt="purple heart" />
         </span>
       </div>
